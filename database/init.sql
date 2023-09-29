@@ -6,9 +6,9 @@ CREATE TABLE users (
 );
 
 -- Tabla para gestionar las etiquetas
-CREATE TABLE tags (
-    tag_id SERIAL PRIMARY KEY,
-    tag_name VARCHAR(255) NOT NULL,
+CREATE TABLE labels (
+    label_id SERIAL PRIMARY KEY,
+    label_name VARCHAR(255) NOT NULL,
     user_id INT NOT NULL REFERENCES users(user_id)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE tasks (
     completed_date TIMESTAMP,
     status VARCHAR(50) DEFAULT 'Pendiente',
     archived BOOLEAN DEFAULT FALSE,
-    tag_id INT REFERENCES tags(tag_id),
+    label_id INT REFERENCES labels(label_id),
     user_id INT NOT NULL REFERENCES users(user_id)
 );
 
@@ -32,7 +32,7 @@ INSERT INTO users (username, password) VALUES
     ('mike_smith', 'password789');
 
 -- Datos de prueba para la tabla etiquetas
-INSERT INTO tags (tag_name, user_id) VALUES
+INSERT INTO labels (label_name, user_id) VALUES
     ('Trabajo', 1),
     ('Casa', 1),
     ('Personal', 1),
@@ -41,7 +41,7 @@ INSERT INTO tags (tag_name, user_id) VALUES
     ('Personal', 3);
 
 -- Datos de prueba para la tabla tareas
-INSERT INTO tasks (title, description, due_date, tag_id, user_id) VALUES
+INSERT INTO tasks (title, description, due_date, label_id, user_id) VALUES
     ('Completar el informe', 'Completar el informe financiero del mes de Septiembre', '2023-10-05 00:00:00', 1, 1),
     ('Lavar los platos', 'Lavar los platos después de la cena', '2023-10-01 20:00:00', 2, 1),
     ('Reunión con el cliente', 'Reunión con el cliente para discutir los requerimientos del proyecto', '2023-10-10 10:00:00', 1, 2),

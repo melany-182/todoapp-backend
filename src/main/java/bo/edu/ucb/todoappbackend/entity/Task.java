@@ -31,8 +31,8 @@ public class Task {
     private Boolean archived = false;
 
     @ManyToOne
-    @JoinColumn(name = "tag_id")
-    private Tag tag;
+    @JoinColumn(name = "label_id")
+    private Label label;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -97,12 +97,12 @@ public class Task {
         this.archived = archived;
     }
 
-    public Tag getTag() {
-        return tag;
+    public Label getLabel() {
+        return label;
     }
 
-    public void setTag(Tag tag) {
-        this.tag = tag;
+    public void setLabel(Label label) {
+        this.label = label;
     }
 
     public User getUser() {
@@ -123,7 +123,7 @@ public class Task {
                 ", completedDate=" + completedDate +
                 ", status='" + status + '\'' +
                 ", archived=" + archived +
-                ", tag=" + tag +
+                ", label=" + label +
                 ", user=" + user +
                 '}';
     }
