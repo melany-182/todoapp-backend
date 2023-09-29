@@ -29,8 +29,8 @@ public class AuthBl {
         }
         else {
             TokenDto tokenDto = new TokenDto();
-            tokenDto.setAuthToken(generateToken(user.getUserId(), "AUTH", 30));
-            tokenDto.setRefreshToken(generateToken(user.getUserId(), "REFRESH", 60));
+            tokenDto.setAuthToken(generateToken(user.getUserId(), "AUTH", 120));
+            tokenDto.setRefreshToken(generateToken(user.getUserId(), "REFRESH", 240));
             return tokenDto;
         }
     }

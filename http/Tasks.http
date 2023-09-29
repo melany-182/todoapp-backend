@@ -1,4 +1,27 @@
-### pendiente *
-GET http://localhost:9999/api/v1/tasks/1
+### Listado de tareas de john_doe
+GET http://localhost:9999/api/v1/tasks
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDM0OTgzLCJ1c2VySWQiOjF9.BN1QD29olbcfpfl-UJ5xF6AVnunVMjLwWu-xryaYwco
+
+### Creación de una tarea
+POST http://localhost:9999/api/v1/tasks
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDM0OTgzLCJ1c2VySWQiOjF9.BN1QD29olbcfpfl-UJ5xF6AVnunVMjLwWu-xryaYwco
 Accept: application/json
-Authorization: 1
+Content-Type: application/json
+
+{
+  "title": "Ir al cine",
+  "description": "Ir al cine con los colegas del trabajo",
+  "dueDate": "2023-10-10T15:00:00",
+  "label": {
+    "labelId": 3
+  },
+  "user": {
+    "userId": 1
+  }
+}
+
+### Actualización de estado de una tarea
+PUT http://localhost:9999/api/v1/tasks/6
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDM0OTgzLCJ1c2VySWQiOjF9.BN1QD29olbcfpfl-UJ5xF6AVnunVMjLwWu-xryaYwco
+Accept: application/json
+Content-Type: application/json
