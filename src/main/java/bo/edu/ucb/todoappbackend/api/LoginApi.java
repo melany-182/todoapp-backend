@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class LoginApi {
 
-    AuthBl authBl;
+    private final AuthBl authBl;
 
     public LoginApi(AuthBl authBl) {
         this.authBl = authBl;
     }
 
+    /** Endpoint que permite autenticar a un usuario.
+     * @param loginRequestDto: El objeto que contiene el nombre de usuario y la contraseña.
+     */
     @PostMapping("/api/v1/auth/login")
     public ResponseDto<TokenDto> login(@RequestBody LoginRequestDto loginRequestDto) {
         TokenDto tokenDto;

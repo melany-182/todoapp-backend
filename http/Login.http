@@ -1,4 +1,4 @@
-###
+### Login exitoso
 POST http://localhost:9999/api/v1/auth/login
 Accept: application/json
 Content-Type: application/json
@@ -6,4 +6,14 @@ Content-Type: application/json
 {
     "username" : "john_doe",
     "password" : "password123"
+}
+
+### Login fallido
+POST http://localhost:9999/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username" : "john_doe",
+  "password" : "password456"
 }

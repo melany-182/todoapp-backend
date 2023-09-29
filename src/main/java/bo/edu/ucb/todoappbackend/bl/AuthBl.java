@@ -68,4 +68,24 @@ public class AuthBl {
             return false;
         }
     }
+
+    // FIXME: no sé si esto está bien
+    public Long getUserIdFromToken(String token) {
+        if (token != null && token.startsWith("Bearer ")) {
+            token = token.substring(7);
+        }
+        DecodedJWT decodedJWT;
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(KEY);
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer("www.ucb.edu.bo")
+                    .build();
+            assert token != null;
+            decodedJWT = verifier.verify(token);
+            return decodedJWT.getClaim("userId").asLong();
+        } catch (JWTVerificationException ex) {
+            System.err.print("Token inválido: " + ex.getMessage());
+            return null;
+        }
+    }
 }

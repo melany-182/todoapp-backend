@@ -10,7 +10,7 @@ public class ResponseDto<T> { // respuesta genérica para cualquier invocación 
     // public ResponseDto() {}
 
     /** Utilizar este constructor cuando no hay error.
-     * @param response
+     * @param response: El objeto de respuesta.
      */
     public ResponseDto(T response) {
         this.code = "TODO-0000";
@@ -20,8 +20,8 @@ public class ResponseDto<T> { // respuesta genérica para cualquier invocación 
     /** Utilizar este constructor cuando hay error.
      * Agregar el código de error y el mensaje de error.
      * Procurar que el código de error sea único.
-     * @param code
-     * @param errorMessage
+     * @param code: El código de error.
+     * @param errorMessage: El mensaje de error.
      */
     public ResponseDto(String code, String errorMessage) {
         this.code = code;

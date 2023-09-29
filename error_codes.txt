@@ -1,0 +1,5 @@
+CÓDIGOS DE ERROR
+
+TODO-0000: Solicitud procesada correctamente.
+TODO-0001: Autenticación incorrecta (credenciales inválidas).
+TODO-0002: Token de autorización inválido.
