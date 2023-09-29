@@ -9,7 +9,7 @@ public class SecurityBl {
 
     private UserDao userDao;
 
-    public SecurityBl(UserDao userDao) { // la inyección siempre se hace por constructor
+    public SecurityBl(UserDao userDao) { // la inyección siempre se hace por el constructor
         this.userDao = userDao;
     }
 

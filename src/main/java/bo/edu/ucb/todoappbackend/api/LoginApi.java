@@ -23,7 +23,7 @@ public class LoginApi {
         try {
             user = securityBl.login(loginRequestDto.getUsername(), loginRequestDto.getPassword());
         } catch (RuntimeException ex) {
-            return new ResponseDto("TASK-1000", ex.getMessage());
+            return new ResponseDto("TODO-1000", ex.getMessage());
         }
         return new ResponseDto(user);
     }

@@ -13,7 +13,7 @@ public class ResponseDto { // respuesta genérica a cualquier invocación que se
      * @param result
      */
     public ResponseDto(Object result) {
-        this.code = "TASK-0000";
+        this.code = "TODO-0000";
         this.result = result;
     }
 
