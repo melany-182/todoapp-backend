@@ -17,8 +17,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public User() { // constructor por defecto, necesario siempre
-    }
+    public User() {} // constructor por defecto, necesario siempre
 
     public User(String username, String password) {
         this.username = username;

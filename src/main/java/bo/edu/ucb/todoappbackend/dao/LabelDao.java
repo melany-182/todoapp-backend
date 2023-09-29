@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface LabelDao extends JpaRepository<Label, Long> {
 
-    public List<Label> findByUserUserId(Long userId); // TODO: implementar este método
+    public List<Label> findByUserUserId(Long userId);
 }

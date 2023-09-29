@@ -1,31 +1,31 @@
 package bo.edu.ucb.todoappbackend.dto;
 
-public class ResponseDto { // respuesta genérica a cualquier invocación que se haga
+public class ResponseDto<T> { // respuesta genérica para cualquier invocación que se haga
     private String code;
-    private Object result;
-    private String message;
+    private T response;
+    private String errorMessage;
 
     // Se borra el constructor por defecto, porque así se obliga al programador a utilizar
     // únicamente los constructores definidos posteriormente.
     // public ResponseDto() {}
 
     /** Utilizar este constructor cuando no hay error.
-     * @param result
+     * @param response
      */
-    public ResponseDto(Object result) {
+    public ResponseDto(T response) {
         this.code = "TODO-0000";
-        this.result = result;
+        this.response = response;
     }
 
     /** Utilizar este constructor cuando hay error.
      * Agregar el código de error y el mensaje de error.
      * Procurar que el código de error sea único.
      * @param code
-     * @param message
+     * @param errorMessage
      */
-    public ResponseDto(String code, String message) {
+    public ResponseDto(String code, String errorMessage) {
         this.code = code;
-        this.message = message;
+        this.errorMessage = errorMessage;
     }
 
     public String getCode() {
@@ -36,28 +36,28 @@ public class ResponseDto { // respuesta genérica a cualquier invocación que se
         this.code = code;
     }
 
-    public Object getResult() {
-        return result;
+    public T getResponse() {
+        return response;
     }
 
-    public void setResult(Object result) {
-        this.result = result;
+    public void setResponse(T response) {
+        this.response = response;
     }
 
-    public String getMessage() {
-        return message;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setMessage(String errorMessage) {
-        this.message = errorMessage;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     @Override
     public String toString() {
         return "ResponseDto{" +
                 "code='" + code + '\'' +
-                ", result=" + result +
-                ", message='" + message + '\'' +
+                ", response=" + response +
+                ", errorMessage='" + errorMessage + '\'' +
                 '}';
     }
 }

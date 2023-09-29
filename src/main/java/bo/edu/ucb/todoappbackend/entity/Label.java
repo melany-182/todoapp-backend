@@ -18,8 +18,7 @@ public class Label {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Label() {
-    }
+    public Label() {} // constructor por defecto, necesario siempre
 
     public Label(String labelName, User user) {
         this.labelName = labelName;

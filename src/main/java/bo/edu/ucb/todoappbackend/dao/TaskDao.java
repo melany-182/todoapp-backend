@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface TaskDao extends JpaRepository<Task, Long> {
 
-    public List<Task> findByUserUserId(Long userId); // TODO: implementar este método
+    public List<Task> findByUserUserId(Long userId);
 }
