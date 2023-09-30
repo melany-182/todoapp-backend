@@ -60,7 +60,7 @@ public class LabelApi {
             return new ResponseDto<>("TODO-0002", "Token inválido");
         }
         else {
-            return new ResponseDto<>(this.labelBl.updateLabelById(labelId, label));
+            return new ResponseDto<>(this.labelBl.modifyLabelById(labelId, label));
         }
     }
 

@@ -10,11 +10,14 @@ import bo.edu.ucb.todoappbackend.dao.UserDao;
 import bo.edu.ucb.todoappbackend.dto.LoginRequestDto;
 import bo.edu.ucb.todoappbackend.dto.TokenDto;
 import bo.edu.ucb.todoappbackend.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
 public class AuthBl {
+    private static final Logger LOG = LoggerFactory.getLogger(AuthBl.class); // LOGGER
     public static final String KEY = "TODO-APP-2-2023-UCB";
     private final UserDao userDao;
 
@@ -25,12 +28,14 @@ public class AuthBl {
     public TokenDto login(LoginRequestDto loginRequestDto) {
         User user = userDao.findByUsernameAndPassword(loginRequestDto.getUsername(), loginRequestDto.getPassword());
         if (user == null) {
+            LOG.info("Error al autenticar: Credenciales inválidas");
             throw new RuntimeException("Credenciales inválidas");
         }
         else {
             TokenDto tokenDto = new TokenDto();
             tokenDto.setAuthToken(generateToken(user.getUserId(), "AUTH", 120));
             tokenDto.setRefreshToken(generateToken(user.getUserId(), "REFRESH", 240));
+            LOG.info("Autenticación exitosa");
             return tokenDto;
         }
     }
@@ -38,14 +43,15 @@ public class AuthBl {
     private String generateToken(Long userId, String type, int minutes) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(KEY);
+            LOG.info("Generando token " + userId + " " + type + " " + minutes);
             return JWT.create()
                     .withIssuer("www.ucb.edu.bo")
                     .withClaim("userId", userId)
                     .withClaim("type", type)
                     .withExpiresAt(new Date(System.currentTimeMillis() + 1000L * 60 * minutes)) // 24 horas
                     .sign(algorithm);
-        } catch (JWTCreationException ex){
-            System.out.println("Error al generar el token " + userId + " " + type + " " + minutes);
+        } catch (JWTCreationException ex) {
+            LOG.info("Error al generar el token " + userId + " " + type + " " + minutes);
             throw new RuntimeException("Error al generar el token", ex);
         }
     }
@@ -62,14 +68,14 @@ public class AuthBl {
                     .build();
             assert token != null;
             decodedJWT = verifier.verify(token);
+            LOG.info("Token válido: " + decodedJWT.getClaim("userId").asLong());
             return true;
         } catch (JWTVerificationException ex) {
-            System.err.print("Token inválido: " + ex.getMessage());
+            LOG.info("Token inválido: " + ex.getMessage());
             return false;
         }
     }
 
-    // FIXME: no sé si esto está bien
     public Long getUserIdFromToken(String token) {
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);
@@ -82,9 +88,10 @@ public class AuthBl {
                     .build();
             assert token != null;
             decodedJWT = verifier.verify(token);
+            LOG.info("Token válido: " + decodedJWT.getClaim("userId").asLong());
             return decodedJWT.getClaim("userId").asLong();
         } catch (JWTVerificationException ex) {
-            System.err.print("Token inválido: " + ex.getMessage());
+            LOG.info("Token inválido: " + ex.getMessage());
             return null;
         }
     }
