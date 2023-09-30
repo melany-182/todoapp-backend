@@ -32,7 +32,7 @@ Para compilar y ejecutar este proyecto, es necesario tener instalado:
 
  - Docker Engine 24.0.6
  - Java 17
- - Maven 3.8.7
+ - Maven 3.8.7 (versión mínima requerida)
 
 ## Instalación de la base de datos
 
@@ -56,7 +56,7 @@ docker run --name pg-todoapp -e POSTGRES_PASSWORD=pg123456 -p 15432:5432 -d post
 docker exec -it <CONTAINER ID> psql -U postgres
 ```
 
-4. Ejecutar el script init.sql del directorio 'database'.
+4. Ejecutar el script *init.sql* del directorio 'database'.
 
 
 ## Compilación de la aplicación
@@ -64,7 +64,7 @@ docker exec -it <CONTAINER ID> psql -U postgres
 Para compilar la aplicación, ejecutar el siguiente comando:
 
 ```
-mvn clean package
+mvn clean install
 ```
 
 ## Ejecución de la aplicación
