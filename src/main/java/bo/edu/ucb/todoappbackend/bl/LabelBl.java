@@ -24,6 +24,22 @@ public class LabelBl {
         this.UserDao = UserDao;
     }
 
+    // Obtención de etiqueta por id // FIXME: el usuario debería poder ver únicamente sus etiquetas
+    public LabelDto getLabelById(Long labelId) {
+        try {
+            Label label = labelDao.findById(labelId).orElse(null);
+            if (label != null) {
+                LOG.info("Etiqueta obtenida correctamente");
+                return LabelConverter.entityToDto(label);
+            }
+            LOG.info("Etiqueta con ID " + labelId + " no encontrada");
+            return null;
+        } catch (Exception ex) {
+            LOG.info("Error al obtener la etiqueta: " + ex.getMessage());
+            return null;
+        }
+    }
+
     // e. Listado de etiquetas de un usuario
     public List<LabelDto> getAllLabelsByUserId(Long userId) {
         try {

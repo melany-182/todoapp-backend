@@ -1,10 +1,12 @@
 ### Listado de etiquetas de john_doe
 GET http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
+Accept: application/json
+Content-Type: application/json
 
 ### Creación de una etiqueta
 POST http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
 Accept: application/json
 Content-Type: application/json
 
@@ -14,8 +16,8 @@ Content-Type: application/json
 }
 
 ### Modificación de una etiqueta
-PUT http://localhost:9999/api/v1/labels/15
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
+PUT http://localhost:9999/api/v1/labels/17
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
 Accept: application/json
 Content-Type: application/json
 
@@ -24,5 +26,7 @@ Content-Type: application/json
 }
 
 ### Eliminación de una etiqueta
-DELETE http://localhost:9999/api/v1/labels/15
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
+DELETE http://localhost:9999/api/v1/labels/17
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
+Accept: application/json
+Content-Type: application/json
