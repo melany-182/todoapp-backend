@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Service
 public class TaskBl {
-    private static final Logger LOG = LoggerFactory.getLogger(AuthBl.class); // LOGGER
+    private static final Logger LOG = LoggerFactory.getLogger(TaskBl.class); // LOGGER
     private final TaskDao taskDao;
 
     public TaskBl(TaskDao taskDao) {

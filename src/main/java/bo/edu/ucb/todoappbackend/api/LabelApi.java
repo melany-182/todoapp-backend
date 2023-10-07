@@ -2,8 +2,8 @@ package bo.edu.ucb.todoappbackend.api;
 
 import bo.edu.ucb.todoappbackend.bl.LabelBl;
 import bo.edu.ucb.todoappbackend.bl.AuthBl;
+import bo.edu.ucb.todoappbackend.dto.LabelDto;
 import bo.edu.ucb.todoappbackend.dto.ResponseDto;
-import bo.edu.ucb.todoappbackend.entity.Label;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -25,7 +25,7 @@ public class LabelApi {
      * @param token: El token JWT que se obtuvo al autenticar al usuario.
      */
     @GetMapping("/api/v1/labels")
-    public ResponseDto<List<Label>> getAllLabels(@RequestHeader("Authorization") String token) {
+    public ResponseDto<List<LabelDto>> getAllLabels(@RequestHeader("Authorization") String token) {
         if (!authBl.validateToken(token)) {
             return new ResponseDto<>("TODO-0002", "Token inválido");
         }
@@ -36,31 +36,30 @@ public class LabelApi {
 
     /** Endpoint que permite crear una etiqueta.
      * @param token: El token JWT que se obtuvo al autenticar al usuario.
-     * @param label: La etiqueta a crear.
+     * @param labelDto: La etiqueta a crear.
      */
     @PostMapping("/api/v1/labels")
-    public ResponseDto<Label> createLabel(@RequestBody Label label, @RequestHeader("Authorization") String token) {
+    public ResponseDto<LabelDto> createLabel(@RequestBody LabelDto labelDto, @RequestHeader("Authorization") String token) {
         if (!authBl.validateToken(token)) {
             return new ResponseDto<>("TODO-0002", "Token inválido");
         }
         else {
-            this.labelBl.createLabel(label);
-            return new ResponseDto<>(label);
+            return new ResponseDto<>(this.labelBl.createLabel(labelDto));
         }
     }
 
     /** Endpoint que permite modificar una etiqueta.
      * @param token: El token JWT que se obtuvo al autenticar al usuario.
      * @param labelId: El ID de la etiqueta a modificar.
-     * @param label: La etiqueta con los nuevos datos.
+     * @param labelDto: La etiqueta con los nuevos datos.
      */
     @PutMapping("/api/v1/labels/{labelId}")
-    public ResponseDto<Label> updateLabel(@PathVariable Long labelId, @RequestBody Label label, @RequestHeader("Authorization") String token) {
+    public ResponseDto<LabelDto> updateLabel(@PathVariable Long labelId, @RequestBody LabelDto labelDto, @RequestHeader("Authorization") String token) {
         if (!authBl.validateToken(token)) {
             return new ResponseDto<>("TODO-0002", "Token inválido");
         }
         else {
-            return new ResponseDto<>(this.labelBl.modifyLabelById(labelId, label));
+            return new ResponseDto<>(this.labelBl.modifyLabelById(labelId, labelDto));
         }
     }
 

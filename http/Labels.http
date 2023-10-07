@@ -1,23 +1,21 @@
 ### Listado de etiquetas de john_doe
 GET http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDQ3MDM4LCJ1c2VySWQiOjF9.9IZUXio489NaTTaXoPxz8DVjK_A30-im6NJiBrTtXk4
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
 
 ### Creación de una etiqueta
 POST http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDQ3MDM4LCJ1c2VySWQiOjF9.9IZUXio489NaTTaXoPxz8DVjK_A30-im6NJiBrTtXk4
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
 Accept: application/json
 Content-Type: application/json
 
 {
   "labelName": "Colegio",
-  "user": {
-    "userId": 1
-  }
+  "userId": 1
 }
 
 ### Modificación de una etiqueta
-PUT http://localhost:9999/api/v1/labels/7
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDQ3MDM4LCJ1c2VySWQiOjF9.9IZUXio489NaTTaXoPxz8DVjK_A30-im6NJiBrTtXk4
+PUT http://localhost:9999/api/v1/labels/15
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
 Accept: application/json
 Content-Type: application/json
 
@@ -26,5 +24,5 @@ Content-Type: application/json
 }
 
 ### Eliminación de una etiqueta
-DELETE http://localhost:9999/api/v1/labels/7
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2MDQ3MDM4LCJ1c2VySWQiOjF9.9IZUXio489NaTTaXoPxz8DVjK_A30-im6NJiBrTtXk4
+DELETE http://localhost:9999/api/v1/labels/15
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzA2MDMxLCJ1c2VySWQiOjF9.ISizCCZlm3WZ8CkYefghnQGLe2AIjFqMKCw0N81WXlU
