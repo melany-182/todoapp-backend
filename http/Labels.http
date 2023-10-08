@@ -1,14 +1,14 @@
 ### Listado de etiquetas de john_doe
 GET http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
-Accept: application/json
 Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
 
 ### Creación de una etiqueta
 POST http://localhost:9999/api/v1/labels
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
-Accept: application/json
 Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
 
 {
   "labelName": "Colegio",
@@ -16,17 +16,17 @@ Content-Type: application/json
 }
 
 ### Modificación de una etiqueta
-PUT http://localhost:9999/api/v1/labels/17
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
-Accept: application/json
+PUT http://localhost:9999/api/v1/labels/7
 Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
 
 {
   "labelName": "Universidad"
 }
 
 ### Eliminación de una etiqueta
-DELETE http://localhost:9999/api/v1/labels/17
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw
-Accept: application/json
+DELETE http://localhost:9999/api/v1/labels/7
 Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3d3cudWNiLmVkdS5ibyIsInR5cGUiOiJBVVRIIiwiZXhwIjoxNjk2NzE3MTUzLCJ1c2VySWQiOjF9.sgUh51rd0ArT7dtjjW40nbAN6k043HnvlBj7-4k4Rjw

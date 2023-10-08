@@ -25,6 +25,7 @@ El software tiene una arquitectura en capas:
  - dao: Capa de acceso a datos. Todas las clases que tienen acceso a datos están en este paquete.
  - dto: Capa de transferencia de datos. Todas las clases que son utilizadas para transferir datos entre la capa de controladores, la capa de lógica de negocio y la capa de acceso a datos están en este paquete.
  - entity: Capa de entidades. Todas las clases que son entidades de la base de datos están en este paquete.
+ - util: Capa de utilidades. Todas las clases que son utilidades están en este paquete.
 
 ## Requerimientos
 
